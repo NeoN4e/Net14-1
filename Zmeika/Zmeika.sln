@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zmeika", "Zmeika\Zmeika.csproj", "{F74322C3-FC7A-44F7-9CE3-7084CF071703}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F74322C3-FC7A-44F7-9CE3-7084CF071703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74322C3-FC7A-44F7-9CE3-7084CF071703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74322C3-FC7A-44F7-9CE3-7084CF071703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74322C3-FC7A-44F7-9CE3-7084CF071703}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

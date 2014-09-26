@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfApplicationTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="620.934" Width="604.066" Loaded="Window_Loaded_1" Cursor="Arrow">
+    <Grid x:Name="grid" Cursor="Arrow" ToolTip="">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="342*"/>
+            <ColumnDefinition Width="175*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <CheckBox x:Name="chb" Content="English" HorizontalAlignment="Left" Margin="38,7,0,0" VerticalAlignment="Top" Grid.Row="1" Width="55" />
+        <CheckBox x:Name="chb1" Content="Russian" HorizontalAlignment="Left" Margin="38,42,0,0" VerticalAlignment="Top" Grid.Row="1" Width="57" />
+        <CheckBox x:Name="chb2" Content="Ukraine" HorizontalAlignment="Left" Margin="37,79,0,0" VerticalAlignment="Top" Grid.Row="1" Width="57"/>
+        <Button Content="Checked" HorizontalAlignment="Left" Margin="38,140,0,0" VerticalAlignment="Top" Width="78" Click="Button_Click_1" ToolTip="hjghjgjgh" Grid.Row="1"/>
+        <ComboBox x:Name="cmbProduct" HorizontalAlignment="Left" Margin="252,14,0,0" VerticalAlignment="Top" Width="190" Height="35" SelectedIndex="0" Grid.Row="1" StaysOpenOnEdit="True" IsManipulationEnabled="True" IsTextSearchCaseSensitive="True" Cursor="None" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="Молоко"/>
+            <ComboBoxItem Content="Пиво"/>
+            <ComboBoxItem Content="Сметана"/>
+        </ComboBox>
+        <TextBox x:Name="txbNewProduct" HorizontalAlignment="Left" Height="23" Margin="252,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="252,105,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" Grid.Row="1"/>
+        <Image x:Name="imgTest" HorizontalAlignment="Left" Height="100" Margin="76,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Source="Penguins.jpg" Grid.Column="1"/>
+        <ListBox x:Name="lb1" HorizontalAlignment="Left" Height="213" Margin="20,307,0,0" Grid.Row="1" VerticalAlignment="Top" Width="193" SelectedIndex="1" SelectionMode="Multiple">
+            <ListBoxItem Content="1111"/>
+            <ListBoxItem Content="2222"/>
+            <ListBoxItem Content="333333"/>
+        </ListBox>
+        <ListBox x:Name="lb2" HorizontalAlignment="Left" Height="213" Margin="358,307,0,0" Grid.Row="1" VerticalAlignment="Top" Width="193" SelectedIndex="1" SelectionMode="Multiple" Grid.ColumnSpan="2">
+            <ListBoxItem Content="1111"/>
+            <ListBoxItem Content="2222"/>
+            <ListBoxItem Content="333333"/>
+        </ListBox>
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="252,385,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="252,424,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <ProgressBar x:Name="pgb" HorizontalAlignment="Left" Height="19" Margin="175,210,0,0" Grid.Row="1" VerticalAlignment="Top" Width="282" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Value="40" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.105"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Slider x:Name="sdr" HorizontalAlignment="Left" Margin="178,254,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="273" Maximum="100" TickPlacement="Both" Value="40" ValueChanged="sdr_ValueChanged"/>
+
+    </Grid>
+</Window>
