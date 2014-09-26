@@ -16,11 +16,10 @@ using System.Windows.Shapes;
 namespace CrestZeroProject
 {
   
-  
-
+    
     public partial class MainWindow : Window
     {
-        PcPlayer PC = new PcPlayer();
+        GemeLogic GL = new GemeLogic();
 
         string symbol;
         public MainWindow()
@@ -40,7 +39,13 @@ namespace CrestZeroProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           (sender as Button).Content = this.symbol;
+            Button b = (sender as Button);
+            b.Content = this.symbol;
+
+            GL.PressButton(b);
+
+           // int pcTag = GL.GetPcButton();
+            
         }
 
 
@@ -58,50 +63,93 @@ namespace CrestZeroProject
             X2 = x2;
             X3 = x3;
         }
+
+        /// <summary>Определяет содержит ли текущая линия заданное значение</summary>
+        public bool Contains(int item)
+        {
+            if (this.X1.Equals(item) || this.X2.Equals(item) || this.X3.Equals(item)) return true;
+            return false;
+        }
     }
 
-    class PcPlayer
+    enum Players { p1, p2 }
+
+    struct PlayerPositionQty
     {
-        List<WinLine> Etalonline = new List<WinLine>();
+        int p1;
+        int p2;
 
-        public PcPlayer()
+        public PlayerPositionQty(int p1, int p2)
         {
-            Etalonline.Add(new WinLine(1, 2, 3));
-            Etalonline.Add(new WinLine(4, 5, 6));
-            Etalonline.Add(new WinLine(7, 8, 9));
-
-            Etalonline.Add(new WinLine(1, 4, 7));
-            Etalonline.Add(new WinLine(2, 5, 8));
-            Etalonline.Add(new WinLine(3, 6, 9));
-
-            Etalonline.Add(new WinLine(1, 5, 9));
-            Etalonline.Add(new WinLine(3, 5, 9));
-
+            this.p1=p1;
+            this.p2=p2;
         }
 
-        public int move(Button enemyB)
-        { 
-            int tag = (int)enemyB.Tag;
+        public void incr(Players p)
+        {
+            if(p == Players.p1) this.p1++;
+            else this.p2++;
+        }
+    }
 
-            //if (loseline.Count == 0)
-            //{
-            //    foreach (var item in Etalonline)
-            //    {
-            //        if (item.X1 == BNumber || item.X2 == BNumber || item.X3 == BNumber)
-            //            loseline.Add(item);
-            //    }
+    class GemeLogic
+    {
+        Players CurentPlayer;
+        Dictionary<WinLine, PlayerPositionQty> Etalonline = new Dictionary<WinLine, PlayerPositionQty>();
 
-            //    Random r = new Random();
-            //    int rezalt;
-            //    do
-            //    {
-            //        rezalt = r.Next(1, 9);
-            //    } while (rezalt == BNumber);
+        List<Button> ButtonPool = new List<Button>();
 
-            //    return rezalt;
-            //}
+        public GemeLogic(UIElementCollection Buttons)
+        {
+            PlayerPositionQty qty = new PlayerPositionQty(0,0);
 
-            return 1;
+            Etalonline.Add(new WinLine(1, 2, 3), qty);
+            Etalonline.Add(new WinLine(4, 5, 6), qty);
+            Etalonline.Add(new WinLine(7, 8, 9), qty);
+
+            Etalonline.Add(new WinLine(1, 4, 7), qty);
+            Etalonline.Add(new WinLine(2, 5, 8), qty);
+            Etalonline.Add(new WinLine(3, 6, 9), qty);
+
+            Etalonline.Add(new WinLine(1, 5, 9), qty);
+            Etalonline.Add(new WinLine(3, 5, 9), qty);
+
+            foreach (var item in Buttons)
+            {
+                if (item is Button) ButtonPool.Add(item); 
+            }
+            //ButtonPool.Add(2);
+            //ButtonPool.Add(3);
+            //ButtonPool.Add(4);
+            //ButtonPool.Add(5);
+            //ButtonPool.Add(6);
+            //ButtonPool.Add(7);
+            //ButtonPool.Add(8);
+            //ButtonPool.Add(9);
+
+            CurentPlayer = Players.p1;
+        }
+
+        public void PressButton(Button B)
+        {
+            int tag = (int)B.Tag;
+            
+            ButtonPool.Remove(B);
+
+            //Запишем ходы
+            foreach (var item in Etalonline)
+            {
+                if (item.Key.Contains(tag)) item.Value.incr(this.CurentPlayer);
+            }
+
+            //сменим игрока
+            if (this.CurentPlayer == Players.p1) this.CurentPlayer = Players.p2;
+            else this.CurentPlayer = Players.p1;
+        }
+
+        public Button GetPcButton()
+        {
+            return this.ButtonPool[this.ButtonPool.Count - 1];
         }
     }
 }
