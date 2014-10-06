@@ -34,8 +34,11 @@ namespace ConsoleApplication3
             //Type type = typeof(People);
             //Type type = Type.GetType("ConsoleApplication3.People");
             //Console.WriteLine(type);
-           /* BindingFlags b = BindingFlags.InvokeMethod | BindingFlags.Public |BindingFlags.Instance|BindingFlags.Static ;
+          
+            /* BindingFlags b = BindingFlags.InvokeMethod | BindingFlags.Public |BindingFlags.Instance|BindingFlags.Static ;
             type.InvokeMember("Init", b, null,null, new object[] { "qwqwe", 12 });*/
+            
+            
             //ConstructorInfo ci = type.GetConstructor(new Type[] { });
             //object obj = ci.Invoke(new object[] { });
             //MethodInfo mi = type.GetMethod("Init");
@@ -43,10 +46,7 @@ namespace ConsoleApplication3
             //Console.WriteLine(type);
            // MethodInfo mi = type.GetMethod("Init");
            //// Console.WriteLine(mi);
-           // Mydelegate m = new Mydelegate(p.Init);
-           // Delegate d = mi.CreateDelegate(typeof(Mydelegate));
-           // ((Mydelegate)d)("sdsdsd",12);
-
+           //
              Assembly ass = Assembly.UnsafeLoadFrom(Path.GetFullPath("GameClassLib.dll"));
              Type[] types = ass.GetTypes();
              MethodInfo[] allMethod = null;
@@ -75,15 +75,20 @@ namespace ConsoleApplication3
 
              }
              if (!allMethod[0].IsStatic)
-
              {
                  ConstructorInfo ci = types[0].GetConstructor(new Type[] { });
                  object o = ci.Invoke(new object[] { });
                  object obj = allMethod[0].Invoke(o, new object[] { 12 });
-                
-                 Console.WriteLine((obj as object[])[0]);
+                 foreach (var ob in (obj as object[]))
+                     Console.WriteLine(ob);
              }
-
+             else
+             {
+                 object obj = allMethod[0].Invoke(new object(), new object[] { 12 });
+                 foreach (var ob in (obj as object[]))
+                     Console.WriteLine(ob);
+ 
+             }
 
 
         }
