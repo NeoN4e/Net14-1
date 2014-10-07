@@ -3,8 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF6ED853"/>
+                <GradientStop Color="#FF27B008" Offset="0.746"/>
+            </RadialGradientBrush>
+        </Grid.Background>
         <Label x:Name="CasinoScore" Content="Label" HorizontalAlignment="Left" Margin="167,30,0,0" VerticalAlignment="Top" Width="157"/>
-        <Label x:Name="PlayerScore" Content="Label" HorizontalAlignment="Left" Margin="167,112,0,0" VerticalAlignment="Top" Width="157"/>
-        <Button Content="Еще" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="PlayerScore" Content="Label" HorizontalAlignment="Left" Margin="156,207,0,0" VerticalAlignment="Top" Width="168" FontWeight="Bold"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="0,288,0,0" VerticalAlignment="Top" Width="75" Click="StartGame">
+           
+        </Button>
+        <Button Content="Еще" HorizontalAlignment="Left" Margin="156,238,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Себе" HorizontalAlignment="Left" Margin="249,238,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
     </Grid>
 </Window>
