@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+
+        function move(vector)
+        {
+            
+            if (vector > 0) {
+                
+                for (var i = 1; i < 5; i++) {
+                    var cImg = document.getElementById("img" + i);
+                    var nextImg = document.getElementById("img" + (parseInt(i) + vector));
+
+                    cImg.src = nextImg.src;
+                }
+                //В последний новую картинку
+                var nextImg = document.getElementById("img5");
+            }
+            else {
+               for (var i = 5; i > 1; i--) {
+                    var cImg = document.getElementById("img" + i);
+                    var nextImg = document.getElementById("img" + (parseInt(i) + vector));
+
+                    cImg.src = nextImg.src;
+                }
+                //В последний новую картинку
+                var nextImg = document.getElementById("img1");
+            }
+
+            var from = document.images.length;
+            
+            var imgId = nextImg.src.substring(40, 42);
+            imgId = parseInt(imgId) + vector;
+            
+            if (imgId == 34)
+                imgId = 1;
+
+            if (imgId == 0)
+                imgId = 33;
+
+            if (imgId < 10)
+                imgId="0"+imgId
+
+            nextImg.src = "img/mir" + imgId + ".gif";
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="images" style="text-align:center">
+    </div>
+    <div style="text-align:center">
+        <button onclick="move(-1)"> left</button>
+        <button onclick="move(1)"> Right</button>
+    </div>
+
+    <script>
+        for (var i = 1; i <= 5; i++)
+        {
+            var newImg = document.createElement('img');
+            newImg.src = "img/mir0" + i + ".gif";
+            //newImg.name = "imgs[]";
+            newImg.id = "img" + i;
+            
+            if( i==3)
+                newImg.height = "100";
+
+            images.appendChild(newImg);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //function test(a=2,b=1)
+        //{
+        //        return a+b;
+        //}
+        
+        function Min()
+        {
+            var min = this[0];
+            for(var i=1; i< this.length;i++)
+            {
+                if(this[i]<min)
+                {
+                    min = this[i];
+                }
+            }
+
+            return min;
+        }
+    </script>
+</head>
+<body>
+    <div id="myContent"></div>
+    <div id="Div1" style="border:1px dotted red"></div>
+
+    <script type="text/javascript">
+        //alert("Alert");
+        //confirm("Confirm");
+        //var t = parseInt(prompt("prompt", "default"));
+        //alert(t);
+        //document.writeln(t);
+        myContent.innerHTML = "Test";
+        document.getElementById("Div1").innerHTML = "<h>Test2</h>";
+        
+        //alert(test());
+        
+        var mas = new Array();
+        mas[0] = 10;
+        mas[1] = 1.2;
+        mas[2] = 2;
+        
+        Array.prototype.Min = Min;
+        alert(mas.Min());
+    </script>
+    
+</body>
+</html>

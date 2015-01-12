@@ -1,0 +1,45 @@
+/*p { color:green; font-size:18px; font-weight:mormal;text-align:left}
+a { color:green; font-weight:bold}
+h1 {color:green}
+h1 p{color:red}
+
+footer{color:gray}
+
+aside{color:orange}
+/*aside *{color:red}*/
+/*
+h2.test, h4.test {color:SlateBlue}
+p.test {color:grey}
+.test {color.Magenta;text-align:right}
+p[align]{color:green}
+
+#first {color:Magenta}
+
+aside h3:first-child{color:red}
+h3 span {background-color:red}
+*/
+nav {background-color:#f0f000}
+body{
+	/*background-image:url(image.jpg);
+	background-repeat:no-repeat;
+	
+	background-position: 10% 20%;
+	/*
+	background-attachment: fixed;	
+	*/
+}
+body{counter-reset:heading 0;}
+
+  h1{counter-reset:para;}
+  h1:before{counter-increment:heading;content:"Heading " counter(heading) ": ";}
+  h2:before{counter-increment:para;content:counter(heading) "." counter(para) ": ";}
+
+ul{counter-reset:licount;list-style-type:                                                                                                                                              upper-roman }
+li:before{counter-increment:licount; content:counter(licount) " "}
+
+
+.TAB1 {caption-side:bottom;border-color:grey; border-width:10px;}
+.TAB1 tr{background-color:grey;border-width:7px;border-color:green;border-style:double}
+.TAB1 .row2 {background-color:Orange;borde}
+
+#id1 {background-color:red}

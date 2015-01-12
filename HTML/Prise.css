@@ -1,0 +1,22 @@
+table {width: 600px; border-collapse: collapse;}
+tr,td,th{border:none}
+th{background-color:black;color:white;}
+
+tr:nth-of-type(even){background:#f3f3f3}
+tr:nth-of-type(odd){background:#ddd}
+
+td:nth-child(n+2) { text-align: right;}
+
+tr:last-child td:last-child{ font-weight: bolder;}
+
+table:after{
+    content: 
+    color:red;
+}
+a:after {content: " (" attr(href) ") ";}
+
+@media only screen and (max-device-width: 480px) 
+{ 
+	body {width: 46px;}
+	table {background-color:red}
+}

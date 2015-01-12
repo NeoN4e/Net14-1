@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Конструирование форм</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="refresh" content=10></meta>
+	</head>
+	<body>
+	<!--
+		<form action="mailto:test@test.ru" enctype="text/plain"> 
+		
+		<form action="handler.php">
+			<p><b>Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</b></p>
+			<p>
+				<input type="radio" name="answer" value="a1">Офицерский состав<Br>
+				<input type="radio" name="answer" value="a2">Операционная система<Br>
+				<input type="radio" name="answer" value="a3">Большой полосатый мух
+			</p>
+			<p>
+				<input type="submit">
+				<input type="reset">
+			</p>
+			
+		</form>
+		
+		<iframe src="table.html"></iframe>
+		
+		
+			
+			<form action="javascript.php" enctype="multipart/form-data" method="GET" name="test" target="_top">
+				Имя: <input type="text" name="reg_name" value="Ваше имя" /><br />
+				Фамилия: <input type="text" name="reg_surname" value="Ваша фамилия" /><br /> 
+				Отчество: <input type="text" name="reg_patronymic" value="Ваше отчество" /><br /> 
+				Введите логин: <input type="Password" name="reg_login" maxlength="12" value="< 10 знаков" size="14"/><br />
+				<input type="Reset"></input>
+				<input type="Submit"></input>
+				
+				
+			</form>
+	
+	
+		<form action="test.php" enctype="multipart/form-data" method="POST" name="test" target="_blank"> Ваш пол: <input type="radio" name="reg_gender" value="man" />Мужской
+			
+			<input type="radio" name="reg_gender" value="woman" />Женский
+			
+			<input type="radio" name="reg_gender" value="dontanswer" checked />
+			Не хочу отвечать<br /> 
+			Ваш возраст: 
+			<input type="radio" name="reg_age" value="before18" />до 18
+			<input type="radio" name="reg_age" value="1825" />18-25 
+			<input type="radio" name="reg_age" value="2535" />25-35
+			<input type="radio" name="reg_age" value="35650" />35-50
+			<input type="radio" name="reg_age" value="after50" />старше 50<br />
+			
+		</form>
+		
+		<form action="test.php" enctype="multipart/form-data" method="POST" name="test" target="_blank"> Увлечения: <input type="checkbox" name="reg_hobby[]" value="sing" />Петь <input type="checkbox" name="reg_hobby[]" value="float" />Плавать
+			
+			<input type="checkbox" name="reg_hobby[]" value="walk" />Гулять
+			<input type="checkbox" name="reg_hobby[]" value="work" />Работать<br /> 
+			<input type="checkbox" name="reg_hobby[]" value="drive" />Кататься на машине 
+			<input type="checkbox" name="reg_hobby[]" value="cook" />Готовить
+			<input type="checkbox" name="reg_hobby[]" value="dance" />Танцевать 
+			<input type="checkbox" name="reg_hobby[]" value="read" />Читать<br />
+			
+		</form>
+		
+		<form action="test.php" enctype="multipart/form-data" method="Get" name="test" target="_blank">
+			Добавьте свое фото: <input type="file" name="reg_photo" />
+			<input type="Image" src="image.jpg" border =1></input>
+			<input type="hidden" name="Hiden" value="test"></input>
+			
+			<select name="reg_place" multiple=1> <optgroup label="Россия">
+
+<option value="SPb">Санкт-Петербург</option> <option value="Mos" selected>Москва</option> <option value="Ebr">Екатеринбург</option>
+
+<optgroup label="Америка">
+
+<option value="LA">Лос-Анджелес</option> <option value="Va">Вашингтон</option> <option value="NY">Нью-Йорк</option>
+
+			<optgroup label="Франция">
+				
+				<option value="Par">Париж</option> <option value="Lion">Лион</option>
+				
+			</select><br />
+	
+	<select name="reg_work[]" size="8" multiple="multiple">
+		
+		<optgroup label="Журналистика">
+			
+			<option value="biz">Бизнес</option> <option value="ecol">Экология</option> <option value="tur">Туризм</option>
+			
+			<optgroup label="Программирование">
+				
+				<option value="web">Web-программирование</option> <option value="CPP">C/C++</option>
+				
+				<option value="Del">Delphi</option> <optgroup label="Создание сайтов">
+					
+					<option value="Diz">Дизайн</option> <option value="Html">Верстка</option>
+					
+					<optgroup label="Перевод">
+						
+						<option value="Eng">Английский</option> <option value="Fr">Французский</option> <option value="Ger">Немецкий</option>
+						
+						<optgroup label="Другое">
+							
+							<option value="HR">Управление персоналом</option> <option value="sale">Продажи</option>
+							
+							<option value="admin">Администрирование</option> <option value="PR">Реклама</option>
+							
+						</select><br />
+						
+		</form>
+		
+	
+	
+		<form action="test.php" enctype="multipart/form-data" method="POST" name="test" target="_blank"> <fieldset title="Регистрационная информация">
+			
+			<legend title="Регистрационная информация" align="left">Регистрационная информация</legend>
+			
+			<input type="hidden" name="id_user" value="27" />
+			
+			Введите логин: <input type="text" name="reg_login" maxlength="12" value="< 10 знаков" size="14"/><br />
+			
+			Введите пароль: <input type="password" name="reg_password" value="Пароль" /><br /> </fieldset>
+			
+			<fieldset title="Личная информация">
+				
+				<legend title="Личная информация" align="center">Личная информация</legend>
+				
+				
+				
+				29
+				
+				Имя: <input type="text" name="reg_name" value="Ваше имя" /><br />
+				
+				Фамилия: <input type="text" name="reg_surname" value="Ваша фамилия" /><br /> Отчество: <input type="text" name="reg_patronymic" value="Ваше отчество" /><br /> Ваш пол: <input type="radio" name="reg_gender" value="man" />Мужской
+				
+				<input type="radio" name="reg_gender" value="woman" />Женский
+				
+				<input type="radio" name="reg_gender" value="dontanswer" checked />Не хочу отвечать<br />
+				
+				Ваш возраст: <input type="radio" name="reg_age" value="before18" />до 18 <input type="radio" name="reg_age" value="1825" />18-25
+				
+				<input type="radio" name="reg_age" value="2535" />25-35<br /> <input type="radio" name="reg_age" value="35650" />35-50
+				
+			<input type="radio" name="reg_age" value="after50" />старше 50<br /> </fieldset>
+			
+			<fieldset title="Дополнительная информация">
+				
+				<legend title="Дополнительная информация" align="right">Дополнительная информация</legend>
+				
+				Место проживания:
+				
+				<select name="reg_place" size="1"> <optgroup label="Россия">
+					
+					<option value="SPb">Санкт-Петербург</option> <option value="Mos" selected>Москва</option> <option value="Ebr">Екатеринбург</option>
+					
+					<optgroup label="Америка">
+						
+						<option value="LA">Лос-Анджелес</option> <option value="Va">Вашингтон</option> <option value="NY">Нью-Йорк</option>
+						
+						<optgroup label="Франция">
+							
+							<option value="Par">Париж</option> <option value="Lion">Лион</option>
+							
+						</select><br />
+						
+						Области работы (можно выбрать несколько):<br /> <select name="reg_work[]" size="8" multiple="multiple">
+							
+							<optgroup label="Журналистика">
+								
+								<option value="biz">Бизнес</option> <option value="ecol">Экология</option> <option value="tur">Туризм</option>
+								
+								<optgroup label="Программирование">
+									
+									<option value="web">Web-программирование</option> <option value="CPP">C/C++</option>
+									
+									<option value="Del">Delphi</option> <optgroup label="Создание сайтов">
+										
+										<option value="Diz">Дизайн</option>
+										
+										
+																				
+										<option value="Html">Верстка</option> <optgroup label="Перевод">
+											
+											<option value="Eng">Английский</option> <option value="Fr">Французский</option> <option value="Ger">Немецкий</option>
+											
+											<optgroup label="Другое">
+												
+												<option value="HR">Управление персоналом</option> <option value="sale">Продажи</option>
+												
+												<option value="admin">Администрирование</option> <option value="PR">Реклама</option>
+												
+											</select><br />
+											
+											Увлечения: <input type="checkbox" name="reg_hobby[]" value="sing" />Петь <input type="checkbox" name="reg_hobby[]" value="float" />Плавать
+											
+											<input type="checkbox" name="reg_hobby[]" value="walk" />Гулять
+											
+											<input type="checkbox" name="reg_hobby[]" value="work" />Работать<br /> <input type="checkbox" name="reg_hobby[]" value="drive" />Кататься на машине <input type="checkbox" name="reg_hobby[]" value="cook" />Готовить
+											
+											<input type="checkbox" name="reg_hobby[]" value="dance" />Танцевать <input type="checkbox" name="reg_hobby[]" value="read" />Читать<br /> Раскажите немного о себе:<br />
+											
+											<textarea cols="24" rows="10" name="about" wrap="off">Я самый лучший, лучше меня нет никого.</textarea><br />
+											
+										</fieldset>
+										
+										<fieldset title="Информация о нас">
+											
+											<legend title="Информация о нас" align="right">Информация о нас</legend> Соглашение:<br />
+											
+											<textarea cols="24" rows="3" name="about" readonly>Условия нашего соглашения</textarea><br />
+											
+										</fieldset>
+										
+										
+										<input type="image" name="submit" src="image.jpg" alt="Нажмите чтобы отправить" align="left" border="5" /><input type="image" name="reset" src="reset.jpg" alt="Нажмите для очистки формы" align="right" />
+										
+									</form>
+									
+								</body>
+								
+	-->
+	
+	<form action="test" method="POST">
+		<input type="email" placeholder="me@example.com"> 
+		<Input type="Color"></Input>
+		<input type="submit"></input>
+		<p contenteditable>lorem ipsum</p>
+	</form>
+	</body>
+	
+<form method="get"> 
+	<fieldset id="personal_information">
+		<legend>Project Information</legend> 
+		<ol contenteditable=true>
+			<li>
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name">
+			</li>
+			<li>
+				<label tabindex=1 for="Password" contenteditable=true>Password</label>
+				<input tabindex=4 type="Password" name="pass" autofocus></input>
+				<input tabindex=3 type="range" name="range" ></input>
+				<input tabindex=2 type="email" placeholder="@" ></input>
+			</li>
+			<li>
+				<input type="submit">
+			</li>
+		</ol>
+		
+	</fieldset>
+</form>
+
+</html>

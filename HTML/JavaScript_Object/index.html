@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--<meta http-equiv="refresh" content="1" />-->
+    <title></title>
+     <!-- <script>
+        function hrefOnClic()
+        { alert("hrefOnClic") }
+        //var a = new Auto("Celica", "toyota",6,350);
+        //document.write(a.Print());
+    </script>-->
+    <style>
+        .one{
+            width:800px;
+            height:300px;
+            border:1px solid blue;
+            overflow: hidden;
+        }
+        .one div{
+            width:40%; 
+            border:1px solid red;
+            height:100%;
+        }
+        .one div:nth-child(1){
+            float: left;
+        }
+        .one div:nth-child(2){
+            float: right;
+        }
+
+        </style>
+</head>
+<body onload="pTest.onkeyup=function(){e()}">
+   <!-- <p id ="pTest" >"Re-re"</p>-->
+    <!--<p onkeyup></p>-->
+    <script>
+        function hrefOnClic()
+        {
+            if (confirm("Вы дейстительно хотите перейти на") != true)
+            {
+                //event.returnValue = false;
+               return false;
+            }
+        }
+        
+        function divColor(elem)
+        {
+            //alert(event.srcElement.nodeName);
+            //event.srcElement.style.backgroundColor = "red";
+            elem.style.backgroundColor = "red";
+            //alert("cancelBubble:" + event.cancelBubble);
+            event.cancelBubble = true;
+        }
+
+        function onmove()
+        {
+            document.getElementById("divOfset").innerHTML = "ofsetXY: " + event.offsetX + " x " + event.offsetY+
+                "<br/> X Y :" +event.x+" x "+event.y+
+                "<br/> client:"+event.clientX+" x "+event.clientY+
+                "<br/> screan:"+event.screenX+" x "+event.screenY;
+        }
+    </script>
+
+    <h1>1. Сылка<h1>
+    <a href="http:\\www.ya.ru" onclick="return hrefOnClic()">ya.ru</a>
+    <br/>
+
+
+    <h1>2. бабл<h1>
+    <div style="border:double;background-color:white" onclick=divColor(this)>
+        <div style="border:dashed;margin:20px;background-color:white" onclick=divColor(this)>
+            <p style="background-color:green" onclick=divColor(this)>1</p>
+            <p style="background-color:green" onclick=divColor(this)> 2</p>
+        </div>
+    </div>
+    <br/>
+
+    <h1>3. Ofset<h1>
+    <div class="one" onmousemove="onmove()">
+        <div id="divOfset" class="two" align="left">
+        </div>
+    </div>
+</body>
+</html>

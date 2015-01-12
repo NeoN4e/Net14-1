@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<Html>
+	<head>
+		<meta charset=utf-8></meta>
+		<meta http-equiv="refresh" content=1></meta>
+		<title>Таблица</title>
+		<link href="Style.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<table class="TAB1" border=10 cellspacing=10 cellpadding=10>
+			<caption>Заголовок</caption>
+			<tr class="row1" align = right valign=bottom ">
+				<th id='test' onClick="javascript:alert('Ку-ку');document.getElementById('test')">Заголовк 1</th>
+				<th>Заголовк 2</th>
+				<th>Заголовк 3</th>
+			</tr>
+			<tr class="row2" align=center  valign=center ">
+				<td id="id1" align = right valign=bottom colspan=2>1</td>
+				<td >2</td>
+				<td>3</td>
+				<td valign=top align=center rowspan=2>4</td>
+			</tr>
+			<tr class="row3" align=center  valign=center>
+				<td>1</td>
+				<td class="col1">2</td>
+				<td valign=top align=center rowspan=2>3</td>
+				<td valign=top align=center rowspan=2>4</td>
+			</tr>
+			<tr align=center  valign=center style="color:red">
+				<td>строка 1</td>
+				<td>строка 2</td>
+				<td>строка 4</td>
+				<td>строка 5</td>
+			</tr>
+		</table>
+		<p class="row2">Test</p>
+	</body>
+</Html>
