@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    
+    <title></title>
+
+    <script>
+        function add(name)
+        {
+            //document.write("<tr><td>"+obj+"</td><td></td></td>")
+            var tabl = document.getElementById(table)
+            table.innerHTML = table.innerHTML + "<tr><td>" + name + "</td><td>" + eval(name) + "</td></td>";
+        }
+
+        function parse(ObjName)
+        {
+            //var mas = str.split(",");
+            var str = Object.getOwnPropertyNames(eval(ObjName));
+            var arr = str.toString().split(',');
+            //alert(arr.length);
+            for (i = 0; i < arr.length; i++)
+            {
+                //add(arr[i]);
+                add(ObjName + "." + arr[i].toString());
+                //alert(Object.getOwnPropertyDescriptor(eval(ObjName), arr[i].toString()));
+            }
+        }
+
+        var img = new Image(300, 300);
+        function LoadImg()
+        {
+            //img.src = "img.jpg";
+            //img.src="http://www.mad4wheels.com/webpics/hires/00013906%20-%202013%20Jaguar%20C-X17%205-seater%20concept/download.asp?file=2013_Jaguar_C-X17_5-seater_concept_001_5307.jpg"
+            img.src = "http://i74.beon.ru/5/56/135605/89/3862489/22.jpeg"
+            
+            img.onload = function()
+            {
+                document.getElementById("load").style.display="block";
+            }
+        }
+
+        function ShowImg()
+        {
+            document.images["pic"].src = img.src;
+            return false;
+        }
+
+        var idinterval;
+        function Start()
+        {
+            //alert("Start");
+            idinterval = setInterval("cont.innerHTML += 'test<br/>'", 3);
+        }
+    </script>
+</head>
+<body>
+    <table id="table" border="1">
+        <th>Name</th>
+        <th>Value</th>
+  
+    </table>
+    
+    <image name="pic" style="border:double"></image>
+    <br />
+    <a id="load" href="#" onclick="return ShowImg();" style="display:none">load image</a>
+
+    <script>
+        //add("location.host");
+        //add("location.pathname");
+        //add("location.search");
+        //add("location.href");
+
+        //add("history.length");
+        //add("history.state");
+
+        //add("screen.availHeight");
+        //add("screen.availWidth");
+        //add("screen.width");
+        //add("screen.height");
+        //add("screen.colorDepth");
+        parse("location");
+        parse("history");
+        parse("screen");
+        //parse("document");
+        
+
+        //var d = new Date("12/28/1985");
+        //var d = new Date("01/14/2015");
+        //var arr = new Array("Воскресенье","Понидельник","Вторник","Среда","Четверг","Пятница","Субота");
+        //alert(arr[d.getDay()]);
+
+        //document.write(<form>);
+        
+        //history.
+        // add("location.reload()", location.reload(true));
+        // add("location.reload()", location.reload(true));
+        
+    </script>
+    <form>
+        <script>
+            function getDay(d)
+            {
+                var arr = new Array("Воскресенье", "Понидельник", "Вторник", "Среда", "Четверг", "Пятница", "Субота");
+                //alert(arr[d.value.getDay()]);
+                //alert();
+            }
+        </script>
+        <input name="d" type="date" />
+        <input type="button" onclick="getDay(d.value)"/>
+    </form>
+    
+    <p id="cont"></p>
+        <button onclick="Start()">Start</button>
+        <button onclick="Stop()">Start</button>
+    
+</body>
+</html>

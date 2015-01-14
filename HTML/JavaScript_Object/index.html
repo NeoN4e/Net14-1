@@ -19,6 +19,7 @@
             overflow: hidden;
         }
         .one div{
+            margin:10px;
             width:40%; 
             border:1px solid red;
             height:100%;
@@ -28,6 +29,7 @@
         }
         .one div:nth-child(2){
             float: right;
+            margin-right:10px;
         }
 
         </style>
@@ -56,7 +58,8 @@
 
         function onmove()
         {
-            document.getElementById("divOfset").innerHTML = "ofsetXY: " + event.offsetX + " x " + event.offsetY+
+            //event.srcElement.innerHTML
+            document.getElementById("divOfset").innerHTML = "ofsetXY: " + event.offsetX + " x " + event.offsetY +
                 "<br/> X Y :" +event.x+" x "+event.y+
                 "<br/> client:"+event.clientX+" x "+event.clientY+
                 "<br/> screan:"+event.screenX+" x "+event.screenY;
@@ -78,8 +81,10 @@
     <br/>
 
     <h1>3. Ofset<h1>
-    <div class="one" onmousemove="onmove()">
-        <div id="divOfset" class="two" align="left">
+    <div class="one"  >
+        <div class="two" id="divOfset">
+        </div>
+        <div class="thre" onmousemove="onmove()">
         </div>
     </div>
 </body>
