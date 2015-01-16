@@ -63,6 +63,7 @@
     </table>
     
     <image name="pic" style="border:double"></image>
+    <image id="moveimg" src="img.jpg" style="position: absolute;"></image>
     <br />
     <a id="load" href="#" onclick="return ShowImg();" style="display:none">load image</a>
 
@@ -83,6 +84,7 @@
         parse("location");
         parse("history");
         parse("screen");
+        //parse("Math");
         //parse("document");
         
 
@@ -98,7 +100,7 @@
         // add("location.reload()", location.reload(true));
         
     </script>
-    <form>
+   <!-- <form>
         <script>
             function getDay(d)
             {
@@ -113,7 +115,37 @@
     
     <p id="cont"></p>
         <button onclick="Start()">Start</button>
-        <button onclick="Stop()">Start</button>
-    
+        <button onclick="Stop()">Start</button>-->
+    <script>
+        //Движение картинки
+        var R = 100; //Радиус
+        var A = 0;//Угол
+        var dA = 3 * Math.PI / 180 ; //x * pi / 180
+
+        var delay = 100;
+        var interval;
+
+        function BeginMove()
+        {
+            //alert(R);
+            //var img = document.getElementById("moveimg");
+            
+            //img
+            alert(Image[0].id);
+
+            img.style.top = 180 + R * Math.cos(A) + "px";
+            img.style.left = 180 + R * Math.sin(A) + "px";
+            //moveimg.style.top += 180;
+            A += dA;
+            
+            //R += 10;
+            //alert(moveimg.style.left);
+            
+            //moveimg.style.left += ""+R+"Px";
+        }
+
+
+       interval = setInterval("BeginMove()",delay);
+    </script>
 </body>
 </html>

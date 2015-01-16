@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        document.writeln("<img src='http://blog.xebialabs.com/wp-content/uploads/2014/12/the-cloud.jpg' id=cloud style='position:absolute;width:200px' />");
+        document.writeln("<img id='vedro' src='vedro.jpg' id=cloud style='position:absolute;width:100px' />");
+        
+         var CloudLeftPosition=0;
+         var CloudPointer = 10;
+         
+         var kaplya = new Array();
+         for (i = 0; i < 20; i++)
+         {
+             var img = new Image(50, 50);
+             img.src = "http://sitewater.ru/images/water_drop_bg.jpg";
+             img.style.position = "absolute";
+             img.style.top = "100px";
+             img.style.display = "none";
+             
+             kaplya.push(img);
+             document.body.appendChild(img)
+         }
+
+         function cloudMove()
+         {
+             cloud.style.left = CloudLeftPosition+"px";
+
+             CloudLeftPosition += CloudPointer;
+             
+             if ((CloudLeftPosition+200) > window.innerWidth) 
+                 CloudPointer = -1 * CloudPointer;
+                          
+             if (CloudLeftPosition<=0)
+                 CloudPointer = -1 * CloudPointer;;
+             
+             if (Math.random()*100 > 90)
+             {
+             
+                 for (i = 0; i < kaplya.length; i++)
+                 {
+                     if (kaplya[i].style.display == "none") {
+                         kaplya[i].style.display = "block";
+                          
+                         kaplya[i].style.left = CloudLeftPosition + 100 + "px";
+                         kaplya[i].style.top =  100 + "px";
+                         break;
+                     }
+                 }
+             }
+
+             //Двигаем капли
+             //alert(kaplya.length);
+             for (i = 0; i < kaplya.length; i++)
+             {
+                 
+                 if (kaplya[i].style.display == "block") {
+                     
+                     var h = kaplya[i].style.top;
+                     kaplya[i].style.top = parseInt(h) + 10 + "px";
+
+                     if (parseInt(h) > window.innerHeight) {
+                         kaplya[i].style.display = "none"
+                     }
+                 }
+             }
+         }
+         
+         setInterval("cloudMove()", 100);
+
+         document.onmousemove = function () { vedro.style.top = event.clientX; vedro.style.left = event.clientY }
+    </script>
+
+    
+</body>
+</html>
