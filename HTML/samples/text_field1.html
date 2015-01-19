@@ -1,0 +1,44 @@
+<html>
+<head>
+<title></title>
+<style>
+	#text_1 {
+		border:1px solid #888888;
+		color:#888888;
+	}
+</style>
+<script type="text/javascript">
+    function go() {
+        alert("Value: " + document.forms["testform1"].elements["text_1"].value + "\nDef.value: " +
+               document.forms["testform1"].elements["text_1"].defaultValue);
+    }
+    function focusElem(elem) {
+        with (elem.style) {
+            border = "2px inset #DDDDDD";
+            color = "#000000"
+        }
+        elem.select();
+    }
+    function blurElem(elem) {
+        with (elem.style) {
+            elem.style.border = "1px solid #888888";
+            color = "#888888";
+        }
+    }
+   
+</script>
+
+</head>
+<body>
+<form name="testform1">
+    Текст: <input type="text" name="text_1" id="text_1" value="Some text..." 
+                  onfocus="focusElem(this)" 
+                  onblur="blurElem(this)" />
+    <input type="button" value=" Ok " onclick="go()"/>
+</form>
+
+
+
+
+</body>
+</html>

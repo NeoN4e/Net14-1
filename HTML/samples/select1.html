@@ -1,0 +1,30 @@
+<html>
+<head>
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Wily">
+<meta name="generator" content="AceHTML 5 Pro">
+<script>
+    function go() {
+        window.open(form1.addr.options[form1.addr.selectedIndex].text);
+    }
+</script>
+
+</head>
+<body>
+<form name="form1">
+    Поиск на 
+    <select name="addr">
+        <option>http://www.rambler.ru</option>
+        <option>http://www.yandex.ru</option>
+        <option>http://www.google.com</option>
+        <option>http://www.altavista.com</option>
+        <option>http://www.punto.ru</option>
+    </select>
+    <input type="button" value="Go!" onClick="go()" />
+</form>
+
+
+</body>
+</html>

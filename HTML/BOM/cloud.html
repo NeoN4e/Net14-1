@@ -66,15 +66,23 @@
                      if (parseInt(h) > window.innerHeight) {
                          kaplya[i].style.display = "none"
                      }
+
+                     //Капля попала ведро
+                     if ((kaplya[i].style.top == vedro.style.top+10) && (kaplya[i].style.left >= vedro.style.left) && (kaplya[i].style.left <= vedro.style.left+50))
+                     {
+                         kaplya[i].style.display = "none";
+                     }
                  }
              }
          }
          
          setInterval("cloudMove()", 100);
 
-         document.onmousemove = function () { vedro.style.top = event.clientX; vedro.style.left = event.clientY }
+         document.onmousemove = function () { vedro.style.top = event.clientY+'px'; vedro.style.left = event.clientX+'px' }
     </script>
-
+    <form>
+        <select size="20"></select>
+    </form>
     
 </body>
 </html>
