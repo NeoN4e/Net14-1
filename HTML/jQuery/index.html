@@ -32,7 +32,20 @@
         #block3 {
             background-color:green;
         }
-    </style>
+
+        table {
+            border:1px double red;
+         
+        }
+
+        td {
+            width:50px;
+            height:50px;
+            padding:3px;
+            border: 1px solid black;
+            }
+
+   </style>
 
     <script>
         function func1()
@@ -51,10 +64,14 @@
                     width: '350px',
                 },3000
                 );
+    
         }
+
     </script>
+
 </head>
 <body>
+      
         <div id="block1"></div>
         <div id="block2"></div>
         <div id="block3"></div>
@@ -62,6 +79,64 @@
         <button onclick="func1()">button 1</button>
         <button onclick="func2()">button 2</button>
         <button onclick="func3()">button 3</button>
-    
+        
+        <script type="text/javascript">
+            document.write("<table id='tab'>");
+
+            for (var i = 0; i < 8; i++) {
+                
+                document.write("<tr>");
+                
+                for (var j = 0; j < 8 ; j++) {
+                    //tab.innerHTML = tab.innerHTML + "<td>" + i + " x " + j + "</td>";
+                    document.write("<td></td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>")
+            
+            //alert(tab.innerHTML);
+             $("tr:even td:even, tr:odd td:odd").css("background-color", "black");
+            
+        </script>
+
+<!--       <table style="border:dashed">
+           <tr>
+               <td>1</td>
+               <td>2</td>    
+               <td>3</td>
+           </tr>
+            <tr>
+               <td>3</td>
+               <td>2</td>    
+               <td>1</td>
+           </tr>
+       </table> -->
+    <br/>
+    <form>
+        <select size="7">
+            <option>Понедельник</option>
+            <option>Вторник</option>
+            <option>Среда</option>
+            <option>Четверг</option>
+            <option>Пятница</option>
+            <option>Субота</option>
+            <option>Воскресенье</option>
+        </select>
+        
+        <input type="radio" name="week" checked="checked"/>
+        <input type="radio" name="week"/>
+        <input type="radio" name="week"/>
+        <input type="radio" name="week"/>
+        <input type="radio" name="week"/>
+        <input type="radio" name="week"/>
+        <input type="radio" name="week"/>
+    </form>
+
+    <script>
+        $(":radio").click(function () {
+            alert("1")
+        });
+    </script>
 </body>
 </html>
