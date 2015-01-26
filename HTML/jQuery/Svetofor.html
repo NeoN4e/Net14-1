@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Svetofor</title>
+    <script type="text/javascript" src="jquery-2.1.3.js"></script>
+
+    <style type="text/css">
+       div{
+            border:double;
+            border-radius:100px;
+            width:100px;
+            height:100px;
+            position:relative;
+        }
+
+        #red {
+            background-color:red;
+            transition: background-color 2s 0.1s ease;
+        }
+
+        #yellow {
+            background-color:yellow;
+            transition: background-color 2s 0.1s ease;
+        }
+
+        #green {
+            background-color:green;
+            transition: background-color 2s 0.1s ease;
+        }
+
+        #white {
+            background-color:white;
+            transition: background-color 1s 0.1s ease;
+        }
+
+        .timer {
+            text-align:center;
+            font-size:80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="red"></div>
+    <div class="yellow" id="yellow"></div>
+    <div class="green" ></div>
+    <div class="timer" ></div>
+
+    <script>
+        //$('#red').attr('style', 'background-color:red');
+        //$('#yellow').attr('style', 'background-color:yellow');
+        //$('#green').attr('style', 'background-color:green');
+
+        var id = 0;
+        function Go()
+        {
+            
+            if (id > 6) id = 0;
+
+            switch (id)
+            {
+                case 0:
+                    $('.yellow').attr("id", "white");
+                    $('.red').attr("id", "red"); break;
+                case 1:
+                    $('.yellow').attr("id", "yellow"); break;
+                case 2:
+                    $('.red').attr("id", "white"); break;
+                case 3: 
+                    $('.yellow').attr("id", "white");
+                    $('.green').attr("id", "green"); break;
+                case 6:
+                    $('.green').attr("id", "white");
+                    $('.yellow').attr("id", "yellow"); break;
+            }       
+            
+            id++;
+        }
+
+        var ttl = 10;
+        function GoTime()
+        {
+            
+            $('.timer').text(ttl);
+            ttl--;
+            if (ttl < 0)
+            {
+                if ($('div').is('#green'))
+                    ttl = 30;
+                else
+                    ttl = 10;
+            }
+
+ 
+            if ($('div').is('#green'))
+                $('.timer').css("color", "green");
+            if ($('div').is('#red'))
+                $('.timer').css("color", "red");
+            
+        }
+
+        setInterval("Go()", 2000);
+        setInterval("GoTime()", 200);
+    </script>
+</body>
+</html>
